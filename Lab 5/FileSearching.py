@@ -11,8 +11,7 @@ def check(file, txt):
     for line in f:
       if txt in line:
         return True
-      else:
-        return False
+  return False
 
 txt = input()
 

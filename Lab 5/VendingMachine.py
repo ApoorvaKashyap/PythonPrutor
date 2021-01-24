@@ -12,39 +12,42 @@ def read_int():
 
 ## Code to read __VendingItems__.csv
 def readItems():
-  temp = []
-  itemsList = {}
-  
-  with open('./Lab 5/__VendingItems__.csv', 'r') as vendingItems:
+    temp = []
+    itemsList = {}
+
+    #change ./Lab 5/__VendingItems__.csv to __VendingItems__.csv for use on Prutor.
+    vendingItems = open('./Lab 5/__VendingItems__.csv', 'r')
     for i in vendingItems:
-      temp.append(i)
+        temp.append(i)
 
-  i=int(0)
-  while i < len(temp):
-    atemp = temp[i].split('|')
-    btemp = atemp[1].split(',')
-    itemsList[atemp[0].strip()] = int(btemp[0].strip())
-    i+=2
+    i = int(0)
+    while i < len(temp):
+        atemp = temp[i].split('|')
+        btemp = atemp[1].split(',')
+        itemsList[atemp[0]] = int(btemp[0])
+        i += 1
 
-  return itemsList
+    return itemsList
+
 
 ## Code to read user inputs
 ## Enforce the constraints using Exception Handling
 def inputItem(itemsList):
-  lst=[]
-  for i in itemsList:
-    lst.append(i)
-  
-  try:
-    item = str(input())
-    if not(item in itemsList):
-      raise Exception 
-  except Exception as e:
-    print('Available Items are %s.\nTry Again.'%lst)
-    item = inputItem(itemsList)
-    return item
-  else:
-    return item
+    lst = []
+    for i in itemsList:
+        lst.append(i)
+
+    try:
+        item = str(input())
+        if not (item in itemsList):
+            raise Exception
+    except Exception as e:
+        print('Available Items are %s.\nTry Again.' % lst)
+        item = inputItem(itemsList)
+        return item
+    else:
+        return item
+
 
 ## Act once the inputs are OK.
 itemsList = readItems()
@@ -52,9 +55,9 @@ item = inputItem(itemsList)
 money = read_int()
 
 if money < int(itemsList[item]):
-  print('Sorry, can not buy item. Not enough money')
+    print('Sorry, can not buy item. Not enough money')
 elif money == int(itemsList[item]):
-  print('Thank you for your purchase. Enjoy')
+    print('Thank you for your purchase. Enjoy')
 else:
-  print('Thank you for your purchase. Enjoy')
-  print('Do not forget to collect your change,{} Rs.'.format(money - itemsList[item]))
+    print('Thank you for your purchase. Enjoy')
+    print('Do not forget to collect your change, {} Rs.'.format(money - itemsList[item]))
