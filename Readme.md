@@ -51,6 +51,3 @@ B. Disadvantages of Prutor:
 * File Writing
 * File Searching
 * Vending Machine
-
-
-*This code is also available on [Repl.it](https://repl.it/) at the following link: https://repl.it/@ApoorvaKashyap/PythonPrutor*
