@@ -1,32 +1,26 @@
 #######################################
-
-# Do Not Change
-
+## Do not Change
 roll = input()
 fileA = roll + 'A.txt'
 fileB = roll + 'B.txt'
 ########################################
-
-
-########################################
 # Your code goes here
-inputA = eval(input())
-inputB = eval(input())
 
-A, B = open(fileA, 'w'), open(fileB, 'w')
+def check(file, txt):
+  with open(file, 'r') as f:
+    for line in f:
+      if txt in line:
+        return True
+      else:
+        return False
 
-for i in range(len(inputA)):
-A.write(str(inputA[i])+'\n')
-B.write(str(inputB[i])+'\n')
+txt = input()
 
-########################################
-
-
-########################################
-# Do Not Change
-A, B = open(fileA, 'r'), open(fileB, 'r')
-print (A.read())
-print (B.read())
-A.close()
-B.close()
-########################################
+if check(fileA, txt) and check(fileB, txt):
+  print('Item {} found in both {} and {}'.format(txt,fileA,fileB))
+elif check(fileA,txt):
+  print('Item {} found in {}'.format(txt,fileA))
+elif check(fileB,txt):
+  print('Item {} found in {}'.format(txt,fileB))
+else:
+  print('Item {} found nowhere'.format(txt))
