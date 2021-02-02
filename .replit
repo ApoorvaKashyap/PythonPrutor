@@ -1,4 +1,4 @@
-run="python './Lab 5/VendingMachine.py'"
+run="python './Lab 6/DistancePlotter.py'"
 language="python3"
 onBoot="echo Booting up!"
 
