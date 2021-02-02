@@ -48,6 +48,11 @@ B. Disadvantages of Prutor:
 * Ackermann Function - Limited
 
 ### Lab 5: File Handling and Searching
-* File Writing
-* File Searching
+* File I-O - Write
+* File I-O - Read
 * Vending Machine
+
+### Lab 6: Using Numpy, Pandas, SciPy and Matplotlib
+* Pangram Evaluator
+* Equation Solver
+* Distance Plotter
